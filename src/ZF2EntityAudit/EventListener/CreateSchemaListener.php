@@ -84,11 +84,11 @@ class CreateSchemaListener implements EventSubscriber
 
             $columnName = preg_replace('/user[^a-zA-Z0-9]*/', '', $columnName);
 
-            $localColumnName = 'user_' . $columnName;
+            $localColumnName = 'user_id'; // . $columnName;
             $localColumnNames[] = $localColumnName;
 
             $fieldType = $meta->getTypeOfField($primaryKey);
-            $revisionsTable->addColumn($localColumnName, $fieldType, array('notnull' => false));
+            $revisionsTable->addColumn($localColumnName, $fieldType, array('notnull' => false,'unsigned' => true));
         }
 
         //add the tablename and primary key from the entity meta
