@@ -12,13 +12,13 @@ class Configuration
     private $suffix = '_audit';
     private $revisionFieldName = 'rev';
     private $revisionTypeFieldName = 'revtype';
-    private $revisionTableName = 'revisions';
+    private $revisionTableName = 'tblauditrevisions';
     private $auditedEntityClasses = array();
     private $currentUser = '';
     private $revisionIdFieldType = 'integer';
     private $note = "";
     private $ipaddress = "127.0.0.1";
-    private $entityClass = "ZfcUser\Entity\User";
+    private $entityClass = "HliBase\Entity\User";
 
     public function getTablePrefix()
     {
